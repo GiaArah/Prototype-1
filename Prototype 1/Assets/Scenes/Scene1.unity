@@ -167,9 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22fc4d3ae306871498398edeb36d261e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BarOn: 0
-  ColorOn: 0
-  ParticleOn: 0
 --- !u!1 &207202159
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,8 +414,6 @@ GameObject:
   m_Component:
   - component: {fileID: 364745277}
   - component: {fileID: 364745273}
-  - component: {fileID: 364745276}
-  - component: {fileID: 364745275}
   - component: {fileID: 364745274}
   m_Layer: 0
   m_Name: Background
@@ -491,52 +486,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e91cea6e8b54b4a8fc0f965879497b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bias: 1
+  Bias: 5
   TimeStep: 0.5
   TimeToBeat: 0.05
   RestSmoothTime: 2
-  beatColors:
-  - {r: 0.6037736, g: 0.36833984, b: 1, a: 0}
-  - {r: 0.6039216, g: 1, b: 1, a: 0}
-  restColor: {r: 0, g: 0, b: 0, a: 0}
---- !u!114 &364745275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 364745272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &364745276
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 364745272}
-  m_CullTransparentMesh: 1
+  BeatColors:
+  - {r: 0.10341756, g: 0.39336416, b: 0.3962264, a: 1}
+  - {r: 0.20698279, g: 0.1654503, b: 0.3679245, a: 1}
+  - {r: 0.23756967, g: 0.4117654, b: 0.5283019, a: 1}
+  RestColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!224 &364745277
 RectTransform:
   m_ObjectHideFlags: 0
@@ -834,9 +792,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 469766878}
+  - component: {fileID: 469766880}
   - component: {fileID: 469766877}
   - component: {fileID: 469766879}
+  - component: {fileID: 469766881}
   m_Layer: 0
   m_Name: Bar6
   m_TagString: Untagged
@@ -896,21 +855,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &469766878
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 469766876}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 974334825}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &469766879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -929,6 +873,44 @@ MonoBehaviour:
   RestSmoothTime: 2
   BeatScale: {x: 2, y: 10, z: 2}
   RestScale: {x: 2, y: 2, z: 2}
+--- !u!224 &469766880
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469766876}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 974334825}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &469766881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469766876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e91cea6e8b54b4a8fc0f965879497b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bias: 0
+  TimeStep: 0
+  TimeToBeat: 0
+  RestSmoothTime: 0
+  BeatColors: []
+  RestColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1635,7 +1617,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 469766878}
+  - {fileID: 469766880}
   - {fileID: 632995073}
   - {fileID: 864643547}
   - {fileID: 2073840711}

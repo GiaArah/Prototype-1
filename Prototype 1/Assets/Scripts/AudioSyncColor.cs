@@ -3,32 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Image))]
 public class AudioSyncColor : AudioSyncer
 {
-	public Color[] beatColors;
-	public Color restColor;
+	public Color[] BeatColors;
+	public Color RestColor;
 
-	private int m_randomIndx;
-	private Image m_img;
+	private int M_RandomIndex;
+	private SpriteRenderer M_Sprite;
     
     private void Start()
 	{
-		m_img = GetComponent<Image>();
+		M_Sprite = GetComponent<SpriteRenderer>();
 	}
     
-    private IEnumerator MoveToColor(Color _target)
+    private IEnumerator MoveToColor(Color Target)
 	{
-		Color _curr = m_img.color;
-		Color _initial = _curr;
-		float _timer = 0;
+		Color Current = M_Sprite.color;
+		Color Initial = Current;
+		float Timer = 0;
 		
-		while (_curr != _target)
+		while (Current != Target)
 		{
-			_curr = Color.Lerp(_initial, _target, _timer / TimeToBeat);
-			_timer += Time.deltaTime;
+			Current = Color.Lerp(Initial, Target, Timer / TimeToBeat);
+			Timer += Time.deltaTime;
 
-			m_img.color = _curr;
+			M_Sprite.color = Current;
 
 			yield return null;
 		}
@@ -38,12 +37,12 @@ public class AudioSyncColor : AudioSyncer
 
 	private Color RandomColor()
 	{
-		if (beatColors == null || beatColors.Length == 0)
+		if (BeatColors == null || BeatColors.Length == 0)
         {
             return Color.white;
         }
-		m_randomIndx = Random.Range(0, beatColors.Length);
-		return beatColors[m_randomIndx];
+		M_RandomIndex = Random.Range(0, BeatColors.Length);
+		return BeatColors[M_RandomIndex];
 	}
 
 	public override void OnUpdate()
@@ -52,7 +51,7 @@ public class AudioSyncColor : AudioSyncer
 
 		if (M_IsBeat) return;
 
-		m_img.color = Color.Lerp(m_img.color, restColor, RestSmoothTime * Time.deltaTime);
+		M_Sprite.color = Color.Lerp(M_Sprite.color, RestColor, RestSmoothTime * Time.deltaTime);
 	}
 
 	public override void OnBeat()
