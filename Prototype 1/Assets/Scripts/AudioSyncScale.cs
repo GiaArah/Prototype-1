@@ -7,6 +7,9 @@ public class AudioSyncScale : AudioSyncer
     public Vector3 BeatScale;
     public Vector3 RestScale;
 
+    //public ParticleSystem particles;
+
+
     private IEnumerator MoveToScale(Vector3 Target)
     {
         Vector3 Current = transform.localScale;
@@ -37,6 +40,7 @@ public class AudioSyncScale : AudioSyncer
         if (!M_IsBeat)
         {
             transform.localScale = Vector3.Lerp(transform.localScale, RestScale, RestSmoothTime * Time.deltaTime);
+            
         }
     }
 
@@ -48,4 +52,9 @@ public class AudioSyncScale : AudioSyncer
         StopCoroutine("MoveToScale");
         StartCoroutine("MoveToScale", BeatScale);
     }
+
+    // void PlayParticle()
+    // {
+    //     particles.Play();
+    // }
 }

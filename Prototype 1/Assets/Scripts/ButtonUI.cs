@@ -8,6 +8,7 @@ public class ButtonUI : MonoBehaviour
     private bool BarOn, ColorOn, ParticleOn, MusicOn;
     private Color BackgroundColor, BarColor;
     private TrackChanger TC;
+    public ParticleSystem ps;
     
     // Start is called before the first frame update
     void Start()
@@ -89,7 +90,20 @@ public class ButtonUI : MonoBehaviour
 
     public void ClickParticleButton()
     {
+        Debug.Log("Click");
+        //if particles on, turn off
+        if(ParticleOn)
+        {
+            ParticleOn = false;
+            ps.Pause();
+        }
 
+        //if particles off, turn on
+        else if(!ParticleOn)
+        {
+            ParticleOn = true;
+            ps.Play();
+        }
     }
 
     public void ClickMusicButton()
