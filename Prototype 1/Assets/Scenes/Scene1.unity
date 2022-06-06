@@ -486,14 +486,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e91cea6e8b54b4a8fc0f965879497b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bias: 5
+  Bias: 2
   TimeStep: 0.5
-  TimeToBeat: 0.05
-  RestSmoothTime: 2
+  TimeToBeat: 0.2
+  RestSmoothTime: 5
   BeatColors:
-  - {r: 0.10341756, g: 0.39336416, b: 0.3962264, a: 1}
-  - {r: 0.20698279, g: 0.1654503, b: 0.3679245, a: 1}
-  - {r: 0.23756967, g: 0.4117654, b: 0.5283019, a: 1}
+  - {r: 0.8207547, g: 0.6323424, b: 0.80644494, a: 1}
+  - {r: 0.5530437, g: 0.735849, b: 0.562184, a: 1}
+  - {r: 0.5672244, g: 0.74792385, b: 0.754717, a: 1}
   RestColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!224 &364745277
 RectTransform:
@@ -1373,7 +1373,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 22d81e8cfeb541847be10fa6ccc15f8d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 45ddaeebe93d83d46973e02d20ef12f1, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
