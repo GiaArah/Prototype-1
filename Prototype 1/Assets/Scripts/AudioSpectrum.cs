@@ -6,7 +6,7 @@ public class AudioSpectrum : MonoBehaviour
 {
     public static float SpectrumValue {get; private set;}
     private float[] M_AudioSpectrum;
-    
+
     // Start is called before the first frame update
     void Start()
     {

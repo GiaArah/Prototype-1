@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class ButtonUI : MonoBehaviour
 {
-    private bool BarOn, ColorOn, ParticleOn;
+    private bool BarOn, ColorOn, ParticleOn, MusicOn;
     private Color BackgroundColor, BarColor;
+    private TrackChanger TC;
     
     // Start is called before the first frame update
     void Start()
@@ -14,7 +15,11 @@ public class ButtonUI : MonoBehaviour
         BarOn = true;
         ColorOn = true;
         ParticleOn = true;
+        MusicOn = true;
         BackgroundColor = GameObject.Find("Background").GetComponent<SpriteRenderer>().color;
+       
+        TC = FindObjectOfType<TrackChanger>();
+
     }
     
     public void ClickBarButton()
@@ -86,5 +91,22 @@ public class ButtonUI : MonoBehaviour
     public void ClickParticleButton()
     {
 
+    }
+
+    public void ClickMusicButton()
+    {
+        //if the full music is on, turn only piano on
+        if(MusicOn)
+        {
+            MusicOn = false;
+            TC.ChangeMusic();
+        }
+
+        //if only the piano is playing, switch to full
+        else if(!MusicOn)
+        {
+            MusicOn = true;
+            TC.ChangeMusic();
+        }
     }
 }
