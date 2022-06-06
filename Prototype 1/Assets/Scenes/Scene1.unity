@@ -301,6 +301,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22fc4d3ae306871498398edeb36d261e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Background: {fileID: 364745272}
+  TC: {fileID: 0}
 --- !u!1 &207202159
 GameObject:
   m_ObjectHideFlags: 0
@@ -2055,7 +2057,7 @@ GameObject:
   - component: {fileID: 868324446}
   - component: {fileID: 868324445}
   m_Layer: 5
-  m_Name: Background
+  m_Name: VolumeBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

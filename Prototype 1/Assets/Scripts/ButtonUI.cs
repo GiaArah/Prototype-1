@@ -19,7 +19,6 @@ public class ButtonUI : MonoBehaviour
         BackgroundColor = GameObject.Find("Background").GetComponent<SpriteRenderer>().color;
        
         TC = FindObjectOfType<TrackChanger>();
-
     }
     
     public void ClickBarButton()
