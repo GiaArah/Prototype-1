@@ -20,6 +20,7 @@ public class ButtonUI : MonoBehaviour
         BackgroundColor = GameObject.Find("Background").GetComponent<SpriteRenderer>().color;
        
         TC = FindObjectOfType<TrackChanger>();
+        ps = GameObject.Find("ParticleSys").GetComponent<ParticleSystem>();
     }
     
     public void ClickBarButton()
