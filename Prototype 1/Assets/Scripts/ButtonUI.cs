@@ -91,7 +91,6 @@ public class ButtonUI : MonoBehaviour
 
     public void ClickParticleButton()
     {
-        Debug.Log("Click");
         //if particles on, turn off
         if(ParticleOn)
         {

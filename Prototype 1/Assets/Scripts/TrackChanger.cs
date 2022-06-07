@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class TrackChanger : MonoBehaviour
 {
-
     public AudioSource _audioSource;
     public AudioSource _audioSource2;
     private GameObject[] other;
     private bool NotFirst = false;
-    
 
     private void Awake()
     {
@@ -27,7 +25,9 @@ public class TrackChanger : MonoBehaviour
         {
             Destroy(gameObject); 
         }
-        DontDestroyOnLoad(transform.gameObject);
+        //DontDestroyOnLoad(transform.gameObject);
+        DontDestroyOnLoad(GameObject.Find("Audio").transform.gameObject);
+        DontDestroyOnLoad(GameObject.Find("Audio2").transform.gameObject);
         //_audioSource = GetComponent<AudioSource>();
         _audioSource.volume = 1.0f;
         _audioSource2.volume = 0f;
@@ -36,9 +36,7 @@ public class TrackChanger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         PlayMusic();
-        
     }
 
     // Update is called once per frame
